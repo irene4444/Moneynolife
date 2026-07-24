@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONEY NO LIFE - Gagnez Gratuitement</title>
+<style>
+body{margin:0;font-family:Arial;background:#000;color:white;text-align:center}
+.header{background:linear-gradient(90deg,#00C851,#007E33);padding:20px}
+h1{font-size:32px;color:#fff;margin:0}
+.card{background:#1a1a1a;margin:15px;padding:20px;border-radius:15px;border:2px solid #00C851}
+.btn{background:#00C851;color:#000;padding:15px;border:none;border-radius:10px;font-weight:bold;font-size:18px;width:90%;margin:10px;cursor:pointer}
+.solde{font-size:40px;color:gold;font-weight:bold}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:green;padding:15px;border-radius:50%;color:white;text-decoration:none;font-size:30px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>MONEY NO LIFE</h1>
+  <p>GAGNEZ DE L'ARGENT GRATUITEMENT</p>
+</div>
+
+<div class="card">
+  <h3>VOTRE SOLDE</h3>
+  <p class="solde">0 FCFA</p>
+  <button class="btn" onclick="demanderRetrait()">DEMANDER UN RETRAIT</button>
+  <p>Min de retrait : 5000 FCFA. Paiement sous 24h</p>
+</div>
+
+<div class="card">
+  <h3>1. TÂCHES QUOTIDIENNES</h3>
+  <p>Gagne 500 FCFA / jour</p>
+  <button class="btn" onclick="gagner(500)">FAIRE LES TÂCHES</button>
+</div>
+
+<div class="card">
+  <h3>2. PARRAINAGE</h3>
+  <p>N1: 1500F | N2: 1000F | N3: 500F</p>
+  <button class="btn" onclick="copierLien()">COPIER MON LIEN</button>
+</div>
+
+<a href="https://wa.me/22870399509" class="whatsapp">💬</a>
+
+<script>
+let solde = 0;
+
+function gagner(montant) {
+  solde = solde + montant;
+  document.querySelector('.solde').innerText = solde + " FCFA";
+  alert("Félicitations ! +"+montant+"F ajouté à ton solde");
+}
+
+function demanderRetrait() {
+  let numero = prompt("Entre ton numéro Orange Money / Moov:");
+  if(solde < 5000){ 
+    alert("Tu as seulement "+solde+"F. Min 5000F pour retirer"); 
+    return; 
+  }
+  
+  // Ça ouvre WhatsApp avec le message de retrait
+  let message = "BONJOUR MONEY NO LIFE%0AJe demande un retrait de "+solde+"F%0AMon numéro: "+numero;
+  window.open("https://wa.me/22870399509?text=" + message);
+  
+  alert("Demande envoyée ! Tu recevras ton argent sous 24h");
+  solde = 0;
+  document.querySelector('.solde').innerText = solde + " FCFA";
+}
+
+function copierLien() {
+  alert("Ton lien: https://moneynolife.com/?ref=TONNUMERO");
+}
+</script>
+</body>
+</html let solde = 0;
+
+function gagner(montant) {
+  solde = solde + montant;
+  document.querySelector('.solde').innerText = solde + " FCFA";
+  alert("Félicitations ! +"+montant+"F ajouté à ton solde");
+}
+.header <!-- Bannière pub en haut -->
+<div style="background:#222;padding:10px;text-align:center;">
+  <p style="color:#00C851;font-size:12px;">PUBLICITÉ</p>
+  <!-- ICI TU METTRAS LE CODE ADSENSE -->
+  <div style="background:#333;color:white;padding:20px;border-radius:10px;">
+    Espace Pub - 800F/semaine<br>
+    <a href="https://wa.me/22870399509" style="color:yellow;">Contactez-nous</a>
+  </div>
+</div><div style="margin:10px;background:#111;padding:15px;border-radius:10px;">
+  <p>Regardez cette pub pour gagner +500F</p>
+  <button class="btn" onclick="gagner(500)">REGARDER LA PUB</button>
+</div>
